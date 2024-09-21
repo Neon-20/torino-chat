@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Poppins } from "next/font/google"
+import { ConvexClientProvider } from "@/components/ConvexClientProvider";
 
 const font = Poppins({
   subsets:["latin"],
@@ -34,7 +35,9 @@ export default function RootLayout({
       <body
         className={font.className}
       >
+        <ConvexClientProvider>
         {children}
+        </ConvexClientProvider>
       </body>
     </html>
   );
